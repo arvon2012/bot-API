@@ -104,6 +104,18 @@
   * code  200成功  
   * data  
     * msg 消息  
+
+实例：  
+请求：http://api.lightbot.world/index.php/r/edit_account?account_id=3t54HV1609139461&web=huobi&api_key=33334&api_secret=22223&other_key=11  
+返回：  
+```Java
+{
+    "code": 200,
+    "data": {
+        "msg": "编辑成功"
+    }
+}
+```
     
 ## 机器人参数设置（创建/编辑/启动/停止）
 请求方式： `GET`  
@@ -122,6 +134,19 @@
   * data  
     * bot_id 机器人id
     * msg 消息  
+
+实例：  
+请求：http://api.lightbot.world/index.php/r/set_bot?account_id=9DXJY71609141556&currency=btc_usdt&type=wangge&param=1 2 3 1&state=1&times=10  
+返回：  
+```Java
+{
+    "code": 200,
+    "data": {
+        "msg": "机器人设置成功"
+    }
+}
+```
+    
     
 ## 机器人批量参数设置（创建/编辑/启动/停止）
 请求方式： `GET`  
