@@ -61,7 +61,7 @@
 
 ## 获取账号信息
 请求方式： `GET`  
-路径：create_account 
+路径：get_account 
 
 参数：  
   * account_id 账号id    
