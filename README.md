@@ -43,7 +43,22 @@
   * data  
     * account_id 账号id  
     * msg 消息  
-      
+
+实例：  
+请求：http://api.lightbot.world/index.php/r/create_account?access_token=test&web=huobi&api_key=333&api_secret=222&other_key=  
+返回：  
+```Java
+{
+    "code": 200,
+    "data": {
+        "msg": "创建成功",
+        "account_id": "3t54HV1609139461"
+    }
+}
+```
+
+
+
 ## 获取账号信息
 请求方式： `GET`  
 路径：create_account 
