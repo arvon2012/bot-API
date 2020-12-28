@@ -330,7 +330,7 @@
 
 参数：  
   * account_id 账号id  
-  * bot_id 机器人id(可选，不传返回所有机器人日志)  
+  * currency 交易对(可选，不传返回所有机器人日志)  
   * page 翻页参数，从1开始
   
 返回：（json）  
@@ -340,6 +340,29 @@
       * currency 交易对
       * content 日志内容
       * time 日志时间
+
+实例：  
+请求：http://api.lightbot.world/index.php/r/get_logs?account_id=9DXJY71609141556&page=1&currency=btc_usdt  
+返回：  
+```Java
+{
+    "code": 200,
+    "data": {
+        "list": [
+            {
+                "content": "[获取挂单] 无法获取我的挂单, 交易所接口异常或盘口暂无挂单",
+                "time": "2020-12-28 20:57:22",
+                "currency": "btc_usdt"
+            },
+            {
+                "content": "[机器人启动] 抱歉, 您的权限不足, 无法开启该机器人",
+                "time": "2020-12-28 16:03:59",
+                "currency": "btc_usdt"
+            }
+        ]
+    }
+}
+```
 
 ## 历史成交订单
 请求方式： `GET`  
@@ -360,7 +383,42 @@
       * num 委托数量
       * num_traded 成交数量
       * state 状态（0 未成交 1 已成交 2 已撤单）
+      * type 订单类型 0 卖出 1买入
       * order_time 委托时间
+
+
+实例：  
+请求：http://api.lightbot.world/index.php/r/get_history_orders?account_id=9DXJY71609141556&page=1&currency=btc_usdt  
+返回：  
+```Java
+{
+    "code": 200,
+    "data": {
+        "list": [
+            {
+                "currency": "btm_usdt",
+                "order_id": "5506170490",
+                "price": "0.7",
+                "num": "1",
+                "num_traded": "1",
+                "state": "1",
+                "type": "0",
+                "order_time": "2018-06-08 18:09:36"
+            },
+            {
+                "currency": "btm_usdt",
+                "order_id": "4620017607",
+                "price": "0.6267",
+                "num": "202",
+                "num_traded": "202",
+                "state": "1",
+                "type": "1",
+                "order_time": "2018-05-18 16:54:32"
+            }
+        ]
+    }
+}
+```
 
 ## 账号资产
 请求方式： `GET`  
@@ -375,3 +433,22 @@
       * 数组下标 币种大写字母如 USDT
         * balance 可用金额
         * freeze 冻结金额
+
+实例：  
+请求：http://api.lightbot.world/index.php/r/get_web_balance?account_id=9DXJY71609141556  
+返回：  
+```Java
+{
+    "code": 200,
+    "data": {
+        "BTC": {
+            "balance": 0.01285876,
+            "freeze": 0
+        },
+        "ETH": {
+            "balance": 7.78328528,
+            "freeze": 0
+        ]
+    }
+}
+```
