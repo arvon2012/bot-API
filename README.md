@@ -2,7 +2,7 @@
 接口访问方式：GET
 参数说明： 接口中出现的currency参数格式统一用小写字母，并用下划线'_'连接，如 btc_usdt  
 
-接口前缀：http://www.ljlightning.com/index.php/r/  
+接口前缀：http://api.lightbot.world/index.php/r/  
   
 接口：  
   1. [创建账号，存储apikey和私钥](#创建账号存储apikey和私钥)  
