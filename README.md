@@ -166,6 +166,23 @@
     * bot_id_list 机器人id列表，用空格连接
     * msg 消息  
 
+实例：  
+请求：http://api.lightbot.world/index.php/r/set_bot_multi?account_id=9DXJY71609141556&currency=btc_usdt eth_usdt eos_usdt&type=wangge&param=1 2 3 1&state=1&times=10  
+返回：  
+```Java
+{
+    "code": 200,
+    "data": {
+        "msg": "机器人批量设置成功",
+        "bot_id": [
+            "1842",
+            "1846",
+            "1847"
+        ]
+    }
+}
+```
+
 ## 清仓卖出 
 说明：清除指定的交易对里所有的持仓  
 请求方式： `GET`  
@@ -179,6 +196,18 @@
   * code  200成功  
   * data  
     * msg 消息
+
+实例：  
+请求：http://api.lightbot.world/index.php/R/clean_position?account_id=9DXJY71609141556&currency=btc_usdt  
+返回：  
+```Java
+{
+    "code": 200,
+    "data": {
+        "msg": "操作完成"
+    }
+}
+```
     
 ## 获取机器人列表
 说明：通过account_id获取这个账号下所有运行中的机器人  
@@ -200,10 +229,57 @@
       * win_rate 浮盈比例
       * rate 当日涨跌比例
 
+实例：  
+请求：http://api.lightbot.world/index.php/r/get_bot_list?account_id=9DXJY71609141556  
+返回：  
+```Java
+{
+    "code": 200,
+    "data": {
+        "list": [
+            {
+                "param": "1 2 3 1",
+                "currency": "eos_usdt",
+                "num": 0,
+                "num_": 0,
+                "win_rate": 0,
+                "avg_price": 0,
+                "times": 0,
+                "last": 2.8486,
+                "rate": 0.05923
+            },
+            {
+                "param": "1 2 3 1",
+                "currency": "eth_usdt",
+                "num": 0,
+                "num_": 0,
+                "win_rate": 0,
+                "avg_price": 0,
+                "times": 0,
+                "last": 727.56,
+                "rate": 0.1029
+            },
+            {
+                "param": "1 1 1 1",
+                "currency": "btc_usdt",
+                "num": 0,
+                "num_": 0,
+                "win_rate": 0,
+                "avg_price": 0,
+                "times": 0,
+                "last": 27220,
+                "rate": -0.00941
+            }
+        ],
+        "msg": "完成"
+    }
+}
+```
+
 ## 获取单个机器人状态详情
 说明：通过account_id获取这个账号下所有运行中的机器人  
 请求方式： `GET`  
-路径：get_bot_list   
+路径：get_bot   
 
 参数：  
   * account_id 账号id  
@@ -221,6 +297,32 @@
     * last 当前价格
     * avg_price 持仓均价
     * times 补仓次数
+
+实例：  
+请求：http://api.lightbot.world/index.php/r/get_bot?account_id=9DXJY71609141556&bot_id=1847  
+返回：  
+```Java
+{
+    "code": 200,
+    "data": {
+        "list": [
+            {
+                "bot_id": "1847",
+                "param": "1 2 3 1",
+                "currency": "eos_usdt",
+                "num": 0,
+                "num_": 0,
+                "win_rate": 0,
+                "avg_price": 0,
+                "times": 0,
+                "last": 2.8504,
+                "rate": 0.0603
+            }
+        ],
+        "msg": "完成"
+    }
+}
+```
 
 ## 获取运行日志
 请求方式： `GET`  
