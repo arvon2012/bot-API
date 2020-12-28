@@ -72,8 +72,23 @@
     * web 交易所（可选：huobi 火币 | ok OK | bian 币安）  
     * api_key apikey  
     * api_secret 私钥   
-    * other_key 其他必要信息（如ok中的passphrase）  
+    * other_key 其他必要信息（如ok中的passphrase） 
     
+实例：  
+请求：http://api.lightbot.world/index.php/r/get_account?account_id=3t54HV1609139461
+返回：  
+```Java
+{
+    "code": 200,
+    "data": {
+        "api_key": "333",
+        "api_secret": "222",
+        "other_key": "0",
+        "web": "huobi"
+    }
+}
+```
+
 ## 修改账号，包括账号名，apikey和私钥
 请求方式： `GET`  
 路径：edit_account 
