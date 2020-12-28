@@ -32,4 +32,21 @@
 
   14. 清仓卖出
 
+创建账号，存储apikey和私钥（返回账号id）
+--------
+请求方式： `GET`  
+路径：create_account 
 
+参数：  
+  * account_name 账号名  
+  * api_key apikey  
+  * api_secret 私钥  
+  
+返回：（json）  
+  * code  200成功  
+  * data  
+    * account_id 账号id  
+    * msg 消息  
+      
+      
+    
