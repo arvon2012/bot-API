@@ -3,8 +3,9 @@
 
 接口前缀：http://www.ljlightning.com/index.php/r/
 
-接口：
-  1. 创建账号，存储apikey和私钥（返回账号id）
+接口：  
+  [1. 创建账号，存储apikey和私钥（返回账号id）]
+  (# 创建账号，存储apikey和私钥（返回账号id）)
 
   2. 机器人参数设置（新建/编辑）
 
@@ -32,13 +33,14 @@
 
   14. 清仓卖出
 
-创建账号，存储apikey和私钥（返回账号id）
+# 创建账号，存储apikey和私钥（返回账号id）
 --------
 请求方式： `GET`  
 路径：create_account 
 
 参数：  
   * account_name 账号名  
+  * web 交易所（可选：huobi 火币 | ok OK | bian 币安）  
   * api_key apikey  
   * api_secret 私钥  
   
@@ -48,5 +50,36 @@
     * account_id 账号id  
     * msg 消息  
       
-      
+修改账号，包括账号名，apikey和私钥
+--------
+请求方式： `GET`  
+路径：edit_account 
+
+参数：  
+  * account_id 账号id    
+  * account_name 账号名  
+  * web 交易所（可选：huobi 火币 | ok OK | bian 币安）  
+  * api_key apikey  
+  * api_secret 私钥  
+  
+返回：（json）  
+  * code  200成功  
+  * data  
+    * msg 消息  
     
+机器人参数设置（创建操作）
+--------
+请求方式： `GET`  
+路径：set_bot   
+
+参数：  
+  * account_id 账号id    
+  * type 机器人类型（可选值：wangge 网格机器人）  
+  * param 机器人参数列表，空格隔开， 如 8 0.01 0.003 0.01 0.003    
+  * state 状态 如 1 启动 0 停止  
+  * times 循环次数  
+  
+返回：（json）  
+  * code  200成功  
+  * data  
+    * msg 消息  
