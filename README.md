@@ -75,7 +75,7 @@
     * other_key 其他必要信息（如ok中的passphrase） 
     
 实例：  
-请求：http://api.lightbot.world/index.php/r/get_account?account_id=3t54HV1609139461
+请求：http://api.lightbot.world/index.php/r/get_account?account_id=3t54HV1609139461  
 返回：  
 ```Java
 {
