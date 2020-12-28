@@ -36,6 +36,7 @@
   * web 交易所（可选：huobi 火币 | ok OK | bian 币安）  
   * api_key apikey  
   * api_secret 私钥  
+  * other_key 其他必要信息（如ok中的passphrase）  
   
 返回：（json）  
   * code  200成功  
@@ -56,6 +57,7 @@
     * web 交易所（可选：huobi 火币 | ok OK | bian 币安）  
     * api_key apikey  
     * api_secret 私钥   
+    * other_key 其他必要信息（如ok中的passphrase）  
     
 ## 修改账号，包括账号名，apikey和私钥
 请求方式： `GET`  
@@ -66,6 +68,7 @@
   * web 交易所（可选：huobi 火币 | ok OK | bian 币安）  
   * api_key apikey  
   * api_secret 私钥  
+  * other_key 其他必要信息（如ok中的passphrase）  
   
 返回：（json）  
   * code  200成功  
