@@ -30,6 +30,7 @@
 路径：create_account 
 
 参数：  
+  * access_token 系统提供，创建账号必传  
   * account_name 账号名  
   * web 交易所（可选：huobi 火币 | ok OK | bian 币安）  
   * api_key apikey  
