@@ -475,3 +475,43 @@
     }
 }
 ```
+
+## 获取盈利列表
+请求方式： `GET`  
+路径：get_daily_profit   
+
+参数：  
+  * access_token   
+  
+返回：（json）  
+  * code  200成功  
+  * data  
+      * account_id 账号ID
+      * profit 当日盈利
+
+实例：  
+请求：http://api.lightbot.world/index.php/R/get_daily_profit?access_token=apitest  
+返回：  
+```Java
+{
+    "code":200,
+    "data":[
+        {
+            "account_id":"9DXJY71609141556",
+            "profit":0
+        },
+        {
+            "account_id":"9qu2Kf1609307977",
+            "profit":0
+        },
+        {
+            "account_id":"molFLA1609333038",
+            "profit":0
+        },
+        {
+            "account_id":"HqTvTK1609333043",
+            "profit":0
+        }
+    ]
+}
+```
