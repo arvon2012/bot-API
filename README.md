@@ -254,6 +254,7 @@
       * win_rate 浮盈比例
       * rate 当日涨跌比例
       * sub_type 循环次数（机器人启动后工作几轮 10000代表无限次）
+      * state 当前运行状态0代表停止 1代表正在运行
 
 实例：  
 请求：http://api.lightbot.world/index.php/r/get_bot_list?account_id=9DXJY71609141556  
