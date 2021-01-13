@@ -247,14 +247,18 @@
   * data  
     * list  
       * bot_id 机器人id
-      * currency 交易对
       * param 参数 空格隔开
-      * num 持仓数量
-      * num_ 持仓金额
-      * win_rate 浮盈比例
-      * rate 当日涨跌比例
+      * currency 交易对
       * sub_type 循环次数（机器人启动后工作几轮 10000代表无限次）
       * state 当前运行状态0代表停止 1代表正在运行
+      * num 持仓数量
+      * num_ 持仓金额
+      * avg_price 持仓均价
+      * times 补仓次数
+      * win_rate 浮盈比例
+      * last 盘口最新价格
+      * rate 当日涨跌比例
+      
 
 实例：  
 请求：http://api.lightbot.world/index.php/r/get_bot_list?account_id=9DXJY71609141556  
@@ -265,37 +269,32 @@
     "data": {
         "list": [
             {
-                "param": "1 2 3 1",
-                "currency": "eos_usdt",
-                "num": 0,
-                "num_": 0,
-                "win_rate": 0,
-                "avg_price": 0,
-                "times": 0,
-                "last": 2.8486,
-                "rate": 0.05923
-            },
-            {
-                "param": "1 2 3 1",
+                "bot_id": "1934",
+                "param": "10 1hour 0.01 3 0.01 0.002 0.02 0.003",
                 "currency": "eth_usdt",
-                "num": 0,
-                "num_": 0,
-                "win_rate": 0,
-                "avg_price": 0,
-                "times": 0,
-                "last": 727.56,
-                "rate": 0.1029
+                "sub_type": "2",
+                "state": "0",
+                "num": "0.0373",
+                "num_": "40",
+                "avg_price": 1072.3860589812,
+                "times": "1",
+                "win_rate": -0.0056939,
+                "last": 1066.28,
+                "rate": -0.04886
             },
             {
-                "param": "1 1 1 1",
-                "currency": "btc_usdt",
-                "num": 0,
-                "num_": 0,
-                "win_rate": 0,
-                "avg_price": 0,
-                "times": 0,
-                "last": 27220,
-                "rate": -0.00941
+                "bot_id": "1847",
+                "param": "10 3 0.02 0.002 0.01 0.002 1",
+                "currency": "eos_usdt",
+                "sub_type": "2",
+                "state": "1",
+                "num": "2.5872",
+                "num_": "7",
+                "avg_price": 2.7056277056277,
+                "times": "2",
+                "win_rate": -0.0029300799999998,
+                "last": 2.6977,
+                "rate": -0.00955
             }
         ],
         "msg": "完成"
@@ -317,14 +316,16 @@
   * data  
     * param 参数 空格隔开
     * currency 交易对
+    * sub_type 循环次数（机器人启动后工作几轮 10000代表无限次）
+    * state 当前运行状态0代表停止 1代表正在运行
     * num 持仓数量
     * num_ 持仓金额
-    * win_rate 浮盈比例
-    * rate 当日涨跌比例
-    * last 当前价格
     * avg_price 持仓均价
     * times 补仓次数
-
+    * win_rate 浮盈比例
+    * last 当前价格
+    * rate 当日涨跌比例
+    
 实例：  
 请求：http://api.lightbot.world/index.php/r/get_bot?account_id=9DXJY71609141556&bot_id=1847  
 返回：  
@@ -335,15 +336,17 @@
         "list": [
             {
                 "bot_id": "1847",
-                "param": "1 2 3 1",
+                "param": "10 3 0.02 0.002 0.01 0.002 1",
                 "currency": "eos_usdt",
-                "num": 0,
-                "num_": 0,
-                "win_rate": 0,
-                "avg_price": 0,
-                "times": 0,
-                "last": 2.8504,
-                "rate": 0.0603
+                "sub_type": "2",
+                "state": "1",
+                "num": "2.5872",
+                "num_": "7",
+                "avg_price": 2.7056277056277,
+                "times": "2",
+                "win_rate": -0.0034475199999999,
+                "last": 2.6963,
+                "rate": -0.00681
             }
         ],
         "msg": "完成"
@@ -364,6 +367,7 @@
   * code  200成功  
   * data  
     * list
+      * id ID序号
       * currency 交易对
       * content 日志内容
       * time 日志时间
@@ -377,11 +381,13 @@
     "data": {
         "list": [
             {
-                "content": "[获取挂单] 无法获取我的挂单, 交易所接口异常或盘口暂无挂单",
-                "time": "2020-12-28 20:57:22",
+                "id": "10535544",
+                "content": "[网格机器人5] 最新价格 34579.38 上次交易价格 34716.85 目前持仓均价 34730.538922156",
+                "time": "2021-01-13 16:24:13",
                 "currency": "btc_usdt"
             },
             {
+                "id": "10535543",
                 "content": "[机器人启动] 抱歉, 您的权限不足, 无法开启该机器人",
                 "time": "2020-12-28 16:03:59",
                 "currency": "btc_usdt"
@@ -409,6 +415,7 @@
       * price 委托价格
       * num 委托数量
       * num_traded 成交数量
+      * avg_price 交易均价
       * state 状态（0 未成交 1 已成交 2 已撤单）
       * type 订单类型 0 卖出 1买入
       * order_time 委托时间
@@ -428,6 +435,7 @@
                 "price": "0.7",
                 "num": "1",
                 "num_traded": "1",
+                "avg_price": "0.7",
                 "state": "1",
                 "type": "0",
                 "order_time": "2018-06-08 18:09:36"
@@ -438,6 +446,7 @@
                 "price": "0.6267",
                 "num": "202",
                 "num_traded": "202",
+                "avg_price": "0.6267",
                 "state": "1",
                 "type": "1",
                 "order_time": "2018-05-18 16:54:32"
