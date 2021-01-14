@@ -416,6 +416,8 @@
       * num 委托数量
       * num_traded 成交数量
       * avg_price 交易均价
+      * fee 手续费
+      * profit 盈利
       * state 状态（0 未成交 1 已成交 2 已撤单）
       * type 订单类型 0 卖出 1买入
       * order_time 委托时间
@@ -436,6 +438,8 @@
                 "num": "1",
                 "num_traded": "1",
                 "avg_price": "0.7",
+                "fee": "0",
+                "profit": "0",
                 "state": "1",
                 "type": "0",
                 "order_time": "2018-06-08 18:09:36"
@@ -447,6 +451,8 @@
                 "num": "202",
                 "num_traded": "202",
                 "avg_price": "0.6267",
+                "fee": "0",
+                "profit": "0",
                 "state": "1",
                 "type": "1",
                 "order_time": "2018-05-18 16:54:32"
