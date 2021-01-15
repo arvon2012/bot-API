@@ -501,36 +501,34 @@
 
 参数：  
   * access_token   
+  * time 可选，日期（格式如：2021-01-01） 
   
 返回：（json）  
   * code  200成功  
   * data  
-      * account_id 账号ID
-      * profit 当日盈利
+      * time 日期  
+      * list 盈利列表  
+        * account_id 账号ID
+        * profit 当日盈利
 
 实例：  
-请求：http://api.lightbot.world/index.php/R/get_daily_profit?access_token=apitest  
+请求：http://api.lightbot.world/index.php/R/get_daily_profit?access_token=apitest&time=2021-01-15  
 返回：  
 ```Java
 {
-    "code":200,
-    "data":[
-        {
-            "account_id":"9DXJY71609141556",
-            "profit":0
-        },
-        {
-            "account_id":"9qu2Kf1609307977",
-            "profit":0
-        },
-        {
-            "account_id":"molFLA1609333038",
-            "profit":0
-        },
-        {
-            "account_id":"HqTvTK1609333043",
-            "profit":0
-        }
-    ]
+    "code": 200,
+    "data": {
+        "time": "2021-01-15",
+        "list": [
+            {
+                "account_id": "9DXJY71609141556",
+                "profit": "0"
+            },
+            {
+                "account_id": "3k6kkU1610676695",
+                "profit": "0"
+            }
+        ]
+    }
 }
 ```
