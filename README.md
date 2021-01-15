@@ -410,6 +410,7 @@
   * code  200成功  
   * data  
     * list
+      * web 交易所
       * currency 交易对
       * order_id 订单id
       * price 委托价格
@@ -432,6 +433,7 @@
     "data": {
         "list": [
             {
+                "web": "huobi",
                 "currency": "btm_usdt",
                 "order_id": "5506170490",
                 "price": "0.7",
@@ -445,6 +447,7 @@
                 "order_time": "2018-06-08 18:09:36"
             },
             {
+                "web": "huobi",
                 "currency": "btm_usdt",
                 "order_id": "4620017607",
                 "price": "0.6267",
