@@ -248,6 +248,7 @@
   * data  
     * list  
       * bot_id 机器人id
+      * type 机器人类型
       * param 参数 空格隔开
       * currency 交易对
       * sub_type 循环次数（机器人启动后工作几轮 10000代表无限次）
@@ -271,6 +272,7 @@
         "list": [
             {
                 "bot_id": "1934",
+                "type": "wangge",
                 "param": "10 1hour 0.01 3 0.01 0.002 0.02 0.003",
                 "currency": "eth_usdt",
                 "sub_type": "2",
@@ -285,6 +287,7 @@
             },
             {
                 "bot_id": "1847",
+                "type": "wangge",
                 "param": "10 3 0.02 0.002 0.01 0.002 1",
                 "currency": "eos_usdt",
                 "sub_type": "2",
@@ -316,6 +319,7 @@
   * code  200成功  
   * data  
     * param 参数 空格隔开
+    * type 机器人类型
     * currency 交易对
     * sub_type 循环次数（机器人启动后工作几轮 10000代表无限次）
     * state 当前运行状态0代表停止 1代表正在运行
@@ -337,6 +341,7 @@
         "list": [
             {
                 "bot_id": "1847",
+                "type": "wangge",
                 "param": "10 3 0.02 0.002 0.01 0.002 1",
                 "currency": "eos_usdt",
                 "sub_type": "2",
