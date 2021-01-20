@@ -215,7 +215,7 @@
 
 参数：  
   * account_id 账号id   
-  * currency 交易对    
+  * bot_id 要清仓的机器人ID    
   
 返回：（json）  
   * code  200成功  
@@ -223,13 +223,13 @@
     * msg 消息
 
 实例：  
-请求：http://api.lightbot.world/index.php/R/clean_position?account_id=9DXJY71609141556&currency=btc_usdt  
+请求：http://api.lightbot.world/index.php/R/clean_position?account_id=9DXJY71609141556&bot_id=123  
 返回：  
 ```Java
 {
     "code": 200,
     "data": {
-        "msg": "操作完成"
+        "msg": "完成清仓,机器人已彻底停止"
     }
 }
 ```
