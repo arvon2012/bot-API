@@ -47,10 +47,12 @@
   9. [获取运行日志](#获取运行日志)
 
   10. [历史成交订单](#历史成交订单)
+  
+  11. [导出历史成交订单](#导出历史成交订单)
 
-  11. [账号资产](#账号资产)
+  12. [账号资产](#账号资产)
 
-  12. [获取账户盈利列表](#获取账户盈利列表)
+  13. [获取账户盈利列表](#获取账户盈利列表)
 
 ## 创建账号，存储apikey和私钥
 请求方式： `GET`  
@@ -439,6 +441,80 @@
 
 实例：  
 请求：http://api.lightbot.world/index.php/r/get_history_orders?account_id=9DXJY71609141556&page=1&currency=btc_usdt  
+返回：  
+```Java
+{
+    "code": 200,
+    "data": {
+        "list": [
+            {
+                "web": "huobi",
+                "currency": "btm_usdt",
+                "order_id": "5506170490",
+                "price": "0.7",
+                "num": "1",
+                "num_traded": "1",
+                "avg_price": "0.7",
+                "fee": "0",
+                "profit": "0",
+                "state": "1",
+                "type": "0",
+                "order_time": "2018-06-08 18:09:36"
+            },
+            {
+                "web": "huobi",
+                "currency": "btm_usdt",
+                "order_id": "4620017607",
+                "price": "0.6267",
+                "num": "202",
+                "num_traded": "202",
+                "avg_price": "0.6267",
+                "fee": "0",
+                "profit": "0",
+                "state": "1",
+                "type": "1",
+                "order_time": "2018-05-18 16:54:32"
+            }
+        ]
+    }
+}
+```
+
+## 导出历史成交订单
+请求方式： `GET`  
+路径：get_history_orders_for_admin   
+
+参数：  
+  * access_token  
+  * page 翻页参数，从1开始 (结果按create_time创建时间倒序排列)
+  * currency 交易对
+  * limit 每次返回的数量(可选参数)
+  * type 订单类型 1买入 0卖出(可选参数)
+  * start 按更新时间筛选, 开始时间, 如: 2020-12-31 00:00:00(可选参数)
+  * end 按更新时间筛选, 结束时间, 如: 2021-01-01 00:00:00(可选参数)
+  * order_id 订单id: 16182819293(可选参数)
+  
+返回：（json）  
+  * code  200成功  
+  * data  
+    * list
+      * web 交易所
+      * currency 交易对
+      * order_id 订单id
+      * price 委托价格
+      * num 委托数量
+      * num_traded 成交数量
+      * avg_price 交易均价
+      * fee 手续费
+      * profit 盈利
+      * state 状态（0 未成交 1 已成交 2 已撤单）
+      * type 订单类型 0 卖出 1买入
+      * order_time 委托时间
+      * update_time 订单状态更新的时间
+
+
+实例：  
+请求：http://api.lightbot.world/index.php/r/get_history_orders_for_admin?access_token=123&page=1&currency=btc_usdt  
 返回：  
 ```Java
 {
