@@ -56,6 +56,8 @@
   12. [账号资产](#账号资产)
 
   13. [获取账户盈利列表](#获取账户盈利列表)
+  
+  14. [手动补仓](#手动补仓)
 
 ## 创建账号，存储apikey和私钥
 请求方式： `GET`  
@@ -625,6 +627,32 @@
                 "profit": "0"
             }
         ]
+    }
+}
+```
+
+## 手动补仓
+请求方式： `GET`  
+路径：bucang_manual   
+
+参数：  
+  * account_id 账号id
+  * bot_id 机器人id
+  * num 补仓金额(单位USDT)   
+  
+返回：（json）  
+  * code  200成功  
+  * data  
+      * msg 反馈信息 
+
+实例：  
+请求：http://api.lightbot.world/index.php/R/bucang_manual?account_id=ygWMjk1613213336&bot_id=14509&num=10
+返回：  
+```Java
+{
+    "code": 200,
+    "data": {
+        "msg": "手动补仓完成"
     }
 }
 ```
