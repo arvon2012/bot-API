@@ -646,7 +646,7 @@
       * msg 反馈信息 
 
 实例：  
-请求：http://api.lightbot.world/index.php/R/bucang_manual?account_id=ygWMjk1613213336&bot_id=14509&num=10
+请求：http://api.lightbot.world/index.php/R/bucang_manual?account_id=ygWMjk1613213336&bot_id=14509&num=10  
 返回：  
 ```Java
 {
