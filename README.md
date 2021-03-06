@@ -156,7 +156,7 @@
 参数：  
   * account_id 账号id    
   * currency 交易对（小写并用下滑线连接，如 btc_usdt）  
-  * type 机器人类型（可选值：wangge 网格机器人）  
+  * type 机器人类型（可选值：marting 马丁机器人 grid 网格机器人）  
   * param 机器人参数列表，空格隔开， 如 8 0.01 0.003 0.01 0.003    
   * state 状态 如 1 启动 0 停止  
   * times 循环次数  
@@ -168,7 +168,7 @@
     * msg 消息  
 
 实例：  
-请求：http://api.lightbot.world/index.php/r/set_bot?account_id=9DXJY71609141556&currency=btc_usdt&type=wangge&param=1 2 3 1&state=1&times=10  
+请求：http://api.lightbot.world/index.php/r/set_bot?account_id=9DXJY71609141556&currency=btc_usdt&type=marting&param=1 2 3 1&state=1&times=10  
 返回：  
 ```Java
 {
