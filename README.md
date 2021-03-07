@@ -59,6 +59,8 @@
   
   14. [手动补仓](#手动补仓)
 
+  15. [每日统计](每日统计) 
+
 ## 创建账号，存储apikey和私钥
 请求方式： `GET`  
 路径：create_account 
@@ -653,6 +655,60 @@
     "code": 200,
     "data": {
         "msg": "手动补仓完成"
+    }
+}
+```
+
+## 每日统计
+请求方式： `GET`  
+路径：data_statistics_daily   
+
+参数：  
+  * access_token 商户的access_token
+  
+返回：（json）  
+  * code  200成功  
+  * data  
+      * user_num 当前活跃用户数(有机器人开启的用户)  
+      * bot_num 平台当前正在运行的机器人总数  
+      * profit_sum 平台当日创造的盈利总金额  
+      * num_list 每个用户开了几个机器人明细  
+          * account_id 用户id  
+          * bot_num 运行中机器人总数  
+      * profit_list 当日盈利明细
+          * account_id 用户id  
+          * profit 当前用户盈利金额  
+
+实例：  
+请求：http://api.lightbot.world/index.php/R/data_statistics_daily?access_token=abc
+返回：  
+```Java
+{
+    "code":200,
+    "data":{
+        "user_num":207,
+        "bot_num":2451,
+        "profit_sum":11829.793308,
+        "num_list":[
+            {
+                "user_name":"05F9si1614527777",
+                "bot_num":"24"
+            },
+            {
+                "user_name":"Zr9Dv4161cceeq30",
+                "bot_num":"6"
+            }
+        ],
+        "profit_list":[
+            {
+                "user_name":"VBDIcg1612dex123",
+                "profit":"265.78"
+            },
+            {
+                "user_name":"WD36ev161aaa9523",
+                "profit":"0.37797"
+            }
+        ]
     }
 }
 ```
