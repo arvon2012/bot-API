@@ -59,7 +59,7 @@
   
   14. [手动补仓](#手动补仓)
 
-  15. [每日统计](每日统计) 
+  15. [每日统计](#每日统计) 
 
 ## 创建账号，存储apikey和私钥
 请求方式： `GET`  
@@ -680,7 +680,7 @@
           * profit 当前用户盈利金额  
 
 实例：  
-请求：http://api.lightbot.world/index.php/R/data_statistics_daily?access_token=abc
+请求：http://api.lightbot.world/index.php/R/data_statistics_daily?access_token=abc  
 返回：  
 ```Java
 {
