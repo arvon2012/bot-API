@@ -495,7 +495,7 @@
 
 参数：  
   * access_token  
-  * page 翻页参数，从1开始 (结果按create_time创建时间倒序排列)
+  * page 翻页参数，从1开始 (结果按create_time创建时间倒序排列)  
   以下参数已失效:
   * currency 交易对
   * limit 每次返回的数量(可选参数)
