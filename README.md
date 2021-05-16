@@ -61,6 +61,8 @@
 
   15. [每日统计](#每日统计) 
 
+  16. [运行中机器人总数](#运行中机器人总数) 
+
 ## 创建账号，存储apikey和私钥
 请求方式： `GET`  
 路径：create_account 
@@ -711,6 +713,44 @@
             {
                 "user_name":"WD36ev161aaa9523",
                 "profit":"0.37797"
+            }
+        ]
+    }
+}
+```
+
+## 每日机器人数据汇总
+请求方式： `GET`  
+路径：get_bot_statistics   
+
+参数：  
+  * access_token 商户的access_token
+  
+返回：（json）  
+  * code  200成功  
+  * data  
+      * list  
+         * user_num 当前活跃用户数(有机器人开启的用户)  
+         * bot_num 平台当前正在运行的机器人总数  
+         * date 日期
+
+实例：  
+请求：http://api.lightbot.world/index.php/R/get_bot_statistics?access_token=abc  
+返回：  
+```Java
+{
+    "code":200,
+    "data":{
+        "list":[
+            {
+                "bot_num":"7878",
+                "user_num":"490",
+                "date":"2021-05-03"
+            },
+            {
+                "bot_num":"7774",
+                "user_num":"492",
+                "date":"2021-05-02"
             }
         ]
     }
