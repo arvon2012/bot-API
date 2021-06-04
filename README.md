@@ -63,6 +63,8 @@
 
   16. [每日机器人数据汇总](#每日机器人数据汇总) 
 
+  17. [账户资产详情](#账户资产详情) 
+
 ## 创建账号，存储apikey和私钥
 请求方式： `GET`  
 路径：create_account 
@@ -753,6 +755,49 @@
                 "date":"2021-05-02"
             }
         ]
+    }
+}
+```
+
+## 账户资产详情
+请求方式： `GET`  
+路径：get_web_balance_v2   
+
+参数：  
+  * account_id 用户的账户id
+  
+返回：（json）  
+  * code  200成功  
+  * data  
+      * total 总资产(折算USDT)
+      * rate 仓位百分比 
+      * list  详细资产列表
+        * balance 可用金额
+        * freeze 冻结金额
+
+实例：  
+请求：http://api.lightbot.world/index.php/r/get_web_balance_v2?account_id=9DXJY71609141556  
+返回：  
+```Java
+{
+    "code":200,
+    "data":{
+        "total":78.73660331,
+        "rate":0.985,
+        "list":{
+            "KSM":{
+                "balance":"0.002025",
+                "freeze":"0"
+            },
+            "FIL":{
+                "balance":"0.013949",
+                "freeze":"0"
+            },
+            "RNDR":{
+                "balance":"0.006174",
+                "freeze":"0"
+            }
+        }
     }
 }
 ```
