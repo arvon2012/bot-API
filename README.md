@@ -347,6 +347,7 @@
     * win_rate 浮盈比例
     * last 当前价格
     * rate 当日涨跌比例
+    * next_price 下一次的补仓价格
     
 实例：  
 请求：http://api.lightbot.world/index.php/r/get_bot?account_id=9DXJY71609141556&bot_id=1847  
@@ -369,7 +370,8 @@
                 "times": "2",
                 "win_rate": -0.0034475199999999,
                 "last": 2.6963,
-                "rate": -0.00681
+                "rate": -0.00681,
+                "next_price": 2.00681
             }
         ],
         "msg": "完成"
