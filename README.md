@@ -798,6 +798,7 @@
 
 参数：  
   * account_id 用户的账户id
+  * type （非必填）账户类型 现货spot（默认） 合约swap
   
 返回：（json）  
   * code  200成功  
