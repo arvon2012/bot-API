@@ -277,6 +277,7 @@
       * win_rate 浮盈比例
       * last 盘口最新价格
       * rate 当日涨跌比例
+      * error 机器人错误状态(如果有错误)
       
 
 实例：  
@@ -349,6 +350,7 @@
     * rate 当日涨跌比例
     * next_price 下一次的补仓价格
     * win_times 止盈次数
+    * error 机器人错误状态(如果有错误)
     
 实例：  
 请求：http://api.lightbot.world/index.php/r/get_bot?account_id=9DXJY71609141556&bot_id=1847  
