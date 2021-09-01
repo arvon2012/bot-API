@@ -858,7 +858,7 @@
   * msg 结果  
 
 实例：  
-请求：http://api.lightbot.world/index.php/r/set_follow_service_info?access_token=test&account_id=QvlW8e17399866&id=1&name=带单测试&state=1&ssf=spot&fee=0.1
+请求：http://api.lightbot.world/index.php/r/set_follow_service_info?access_token=test&account_id=QvlW8e17399866&id=1&name=带单测试&state=1&ssf=spot&fee=0.1  
 返回：  
 ```Java
 {
