@@ -66,6 +66,8 @@
   17. [每日机器人数据汇总](#每日机器人数据汇总) 
 
   18. [账户资产详情](#账户资产详情) 
+  
+  19. [更新托管套餐信息](#更新托管套餐信息) 
 
 ## 创建账号，存储apikey和私钥
 请求方式： `GET`  
@@ -835,5 +837,32 @@
             }
         }
     }
+}
+```
+
+## 更新托管套餐信息
+请求方式： `GET`  
+路径：set_follow_service_info   
+
+参数：  
+  * access_token 
+  * account_id 带单老师的账号id
+  * id 套餐id，本地定义的id
+  * name 套餐名称
+  * state 状态 1 启动 0 停止
+  * ssf 套餐类型，如 spot(现货) swap(合约)
+  * fee 托管佣金，如0.1
+  
+返回：（json）  
+  * code  200成功  
+  * msg 结果  
+
+实例：  
+请求：http://api.lightbot.world/index.php/r/set_follow_service_info?access_token=test&account_id=QvlW8e17399866&id=1&name=带单测试&state=1&ssf=spot&fee=0.1
+返回：  
+```Java
+{
+    "code":200,
+    "msg":"保存成功"
 }
 ```
