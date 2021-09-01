@@ -886,7 +886,7 @@
   * msg 结果  
 
 实例：  
-请求：http://api.lightbot.world/index.php/r/set_follow_user?account_id=QvlW8e1627399866&id=1&state=1&ssf=spot&access_token=uwin&amount=1000  
+请求：http://api.lightbot.world/index.php/r/set_follow_user?account_id=QvlW8e1699866&id=1&state=1&ssf=spot&access_token=test&amount=1000  
 返回：  
 ```Java
 {
