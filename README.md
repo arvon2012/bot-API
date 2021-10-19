@@ -1,6 +1,8 @@
 # Light Bot API
 ## 产品介绍
 [闪电官网链接](http://www.ljlightning.com)  
+[量化策略参数表](https://github.com/arvon2012/bot-API/edit/main/strategy.md) 
+[市值操盘策略参数表（如需请联系客服）](https://github.com/arvon2012/bot-API/edit/main/README.md) 
 闪电机器人云系统是一款已经稳定运行3年，服务过数百家项目方，支持上百个交易所的机器人云系统。  
 我们为大家提供了极其简单易懂的API，接入后就可以轻松的开启和管理机器人。  
 云系统目前支持的交易所超过100家，覆盖绝大多数一二三线交易所。  
