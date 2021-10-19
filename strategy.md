@@ -1,5 +1,6 @@
-现货策略：
-智能马丁  
+# Light Bot Param
+## 现货策略
+### 智能马丁  
 type类型： wangge
 times循环方式： 1单次循环(止盈一次就彻底停止) 10000连续循环  
 param:  
@@ -17,7 +18,7 @@ param:
 |止损价格|float|否|到达价格触发清仓操作，默认传0|
 
 
-底部套利  
+### 底部套利  
 type类型： wangge2  
 times循环方式： 1 10000  
 param:  
@@ -35,7 +36,7 @@ param:
 |止损价格|float|否|到达价格触发清仓操作，默认传0|
 
 
-海浪网格  
+### 海浪网格  
 type类型： wave  
 times循环方式： 1  
 param:  
@@ -51,8 +52,8 @@ param:
 |止损价格|float|否|到达价格触发清仓操作，默认传0|
   
 
-合约策略：
-智能马丁  
+## 合约策略
+### 智能马丁  
 type类型： wangge_f
 times循环方式： 1单次循环(止盈一次就彻底停止) 10000连续循环  
 param:  
@@ -72,7 +73,7 @@ param:
 |止损价格|float|否|到达价格触发清仓操作，默认传0|
   
 
-海浪网格  
+### 海浪网格  
 type类型： wave_f  
 times循环方式： 1  
 param:  
@@ -90,7 +91,7 @@ param:
 |止损价格|float|否|到达价格触发清仓操作，默认传0|
   
 
-海浪对冲多  
+### 海浪对冲多  
 type类型： wave_f_long  
 times循环方式： 1  
 param:  
@@ -107,7 +108,7 @@ param:
 |止损价格|float|否|到达价格触发清仓操作，默认传0|
   
 
-海浪对冲空  
+### 海浪对冲空  
 type类型： wave_f_long  
 times循环方式： 1  
 param:  
@@ -123,7 +124,7 @@ param:
 |杠杆倍数|int|是|如1 就是1倍杠杆|
 |止损价格|float|否|到达价格触发清仓操作，默认传0|
 
-手动策略多  
+### 手动策略多  
 type类型： manual_f_long  
 times循环方式： 1  
 param:  
@@ -135,7 +136,7 @@ param:
 |止盈价格|float|否|到达价格触发清仓操作，默认传0|
   
 
-手动策略空  
+### 手动策略空  
 type类型： manual_f_short  
 times循环方式： 1  
 param:  
@@ -147,7 +148,7 @@ param:
 |止盈价格|float|否|到达价格触发清仓操作，默认传0|
   
 
-增币策略（币本位永续合约策略）  
+### 增币策略（币本位永续合约策略）  
 type类型： wave_f_coin  
 times循环方式： 1  
 param:  
